@@ -43,6 +43,9 @@ def segregate_mails
       result_files[idx] << line if state == CSVInfo::POSSIBLE_STATES[idx]
     end
   end
+
+  csv_file.close
+  result_files.each(&:close)
 end
 
 segregate_mails
